@@ -1,0 +1,9 @@
+backend_user_users:
+  type: rest
+  resource: "@BackendUserBundle/Controller/UserController.php"
+  prefix: /v1
+
+backend_user_posts:
+  type: rest
+  resource: "@BackendUserBundle/Controller/PostController.php"
+  prefix: /v1

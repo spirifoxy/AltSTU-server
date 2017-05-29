@@ -1,0 +1,6 @@
+AppBundle\Entity\Post:
+    exclusion_policy: ALL
+#    None
+    properties:
+#        title:
+#            expose: true
