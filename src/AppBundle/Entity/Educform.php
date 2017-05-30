@@ -30,7 +30,7 @@ class Educform
     private $formname;
 
     /**
-     * @ORM\OneToMany(targetEntity="group", mappedBy="educform")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="educform")
      */
     private $groups;
 

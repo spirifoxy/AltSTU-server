@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -59,13 +60,13 @@ class Teacher
      */
     private $rank;
     /**
-     * @ORM\ManyToOne(targetEntity="subfaculty",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="teachers")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $subfaculty;
 
     /**
-     * @ORM\OneToMany(targetEntity="timetable", mappedBy="teacher")
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="teacher")
      */
     private $timetables;
 
@@ -158,5 +159,124 @@ class Teacher
     {
         return $this->patronymic;
     }
-}
 
+    /**
+     * Set post
+     *
+     * @param \AppBundle\Entity\post $post
+     *
+     * @return Teacher
+     */
+    public function setPost(\AppBundle\Entity\post $post = null)
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \AppBundle\Entity\post
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * Set degree
+     *
+     * @param \AppBundle\Entity\degree $degree
+     *
+     * @return Teacher
+     */
+    public function setDegree(\AppBundle\Entity\degree $degree = null)
+    {
+        $this->degree = $degree;
+
+        return $this;
+    }
+
+    /**
+     * Get degree
+     *
+     * @return \AppBundle\Entity\degree
+     */
+    public function getDegree()
+    {
+        return $this->degree;
+    }
+
+    /**
+     * Set rank
+     *
+     * @param \AppBundle\Entity\rank $rank
+     *
+     * @return Teacher
+     */
+    public function setRank(\AppBundle\Entity\rank $rank = null)
+    {
+        $this->rank = $rank;
+
+        return $this;
+    }
+
+    /**
+     * Get rank
+     *
+     * @return \AppBundle\Entity\rank
+     */
+    public function getRank()
+    {
+        return $this->rank;
+    }
+
+    /**
+     * Set subfaculty
+     *
+     * @param \AppBundle\Entity\Subfaculty $subfaculty
+     *
+     * @return Teacher
+     */
+    public function setSubfaculty(\AppBundle\Entity\Subfaculty $subfaculty = null)
+    {
+        $this->subfaculty = $subfaculty;
+
+        return $this;
+    }
+
+    /**
+     * Get subfaculty
+     *
+     * @return \AppBundle\Entity\Subfaculty
+     */
+    public function getSubfaculty()
+    {
+        return $this->subfaculty;
+    }
+
+    /**
+     * Add timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     *
+     * @return Teacher
+     */
+    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables[] = $timetable;
+
+        return $this;
+    }
+
+    /**
+     * Remove timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     */
+    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables->removeElement($timetable);
+    }
+}

@@ -37,7 +37,7 @@ class Degree
     private $longdegree;
 
     /**
-     * @ORM\OneToMany(targetEntity="teacher", mappedBy="degree")
+     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="degree")
      */
     private $teachers;
 
@@ -106,5 +106,28 @@ class Degree
     {
         return $this->longdegree;
     }
-}
 
+    /**
+     * Add teacher
+     *
+     * @param \AppBundle\Entity\Teacher $teacher
+     *
+     * @return Degree
+     */
+    public function addTeacher(\AppBundle\Entity\Teacher $teacher)
+    {
+        $this->teachers[] = $teacher;
+
+        return $this;
+    }
+
+    /**
+     * Remove teacher
+     *
+     * @param \AppBundle\Entity\Teacher $teacher
+     */
+    public function removeTeacher(\AppBundle\Entity\teacher $teacher)
+    {
+        $this->teachers->removeElement($teacher);
+    }
+}

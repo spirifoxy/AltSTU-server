@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,7 +37,7 @@ class Typelesson
     private $typeshort;
 
     /**
-     * @ORM\OneToMany(targetEntity="timetable", mappedBy="typelesson")
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="typelesson")
      */
     private $timetables;
 

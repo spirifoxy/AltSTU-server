@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -127,7 +128,7 @@ class Semester
     private $isactive;
 
     /**
-     * @ORM\OneToMany(targetEntity="group", mappedBy="semester")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="Semester")
      */
     private $groups;
 
@@ -141,7 +142,7 @@ class Semester
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="timetable", mappedBy="semester")
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="semester")
      */
     private $timetables;
 

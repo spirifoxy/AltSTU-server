@@ -37,7 +37,7 @@ class Faculty
     private $shortname;
 
     /**
-     * @ORM\OneToMany(targetEntity="subfaculty", mappedBy="faculty")
+     * @ORM\OneToMany(targetEntity="Subfaculty", mappedBy="faculty")
      */
     private $subfaculties;
 
@@ -51,7 +51,7 @@ class Faculty
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="group", mappedBy="faculty")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="faculty")
      */
     private $groups;
 

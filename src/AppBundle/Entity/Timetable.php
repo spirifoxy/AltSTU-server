@@ -29,31 +29,31 @@ class Timetable
     private $begindatetime;
 
     /**
-     * @ORM\ManyToOne(targetEntity="room",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Room",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $room;
 
     /**
-     * @ORM\ManyToOne(targetEntity="teacher",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Teacher",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $teacher;
 
     /**
-     * @ORM\ManyToOne(targetEntity="typelesson",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Typelesson",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $typelect;
 
     /**
-     * @ORM\ManyToOne(targetEntity="semester",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="group",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Group",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $group;

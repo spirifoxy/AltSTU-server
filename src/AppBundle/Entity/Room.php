@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -75,7 +76,7 @@ class Room
      *
      * @param string $number
      *
-     * @return toom
+     * @return room
      */
     public function setNumber($number)
     {
@@ -99,7 +100,7 @@ class Room
      *
      * @param integer $capacity
      *
-     * @return toom
+     * @return room
      */
     public function setCapacity($capacity)
     {

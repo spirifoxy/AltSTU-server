@@ -30,7 +30,7 @@ class Building
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="room", mappedBy="building")
+     * @ORM\OneToMany(targetEntity="Room", mappedBy="building")
      */
     private $rooms;
 

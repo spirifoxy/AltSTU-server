@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,7 +30,7 @@ class Rank
     private $rankname;
 
     /**
-     * @ORM\OneToMany(targetEntity="teacher", mappedBy="rank")
+     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="rank")
      */
     private $teachers;
 

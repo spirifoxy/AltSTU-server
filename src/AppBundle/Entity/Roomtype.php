@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,7 +30,7 @@ class Roomtype
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="room", mappedBy="roomtype")
+     * @ORM\OneToMany(targetEntity="Room", mappedBy="roomtype")
      */
     private $rooms;
 

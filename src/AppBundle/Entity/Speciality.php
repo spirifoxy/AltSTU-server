@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,7 +37,7 @@ class Speciality
     private $longspeciality;
 
     /**
-     * @ORM\OneToMany(targetEntity="group", mappedBy="speciality")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="speciality")
      */
     private $groups;
 

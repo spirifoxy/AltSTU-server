@@ -50,31 +50,31 @@ class Group
     private $iddaynight;
 
     /**
-     * @ORM\ManyToOne(targetEntity="subfaculty",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="Groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $subfaculty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="faculty",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $faculty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="semester",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="educform",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Educform",inversedBy="groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $educform;
 
     /**
-     * @ORM\ManyToOne(targetEntity="speciality",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Speciality",inversedBy="groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $speciality;

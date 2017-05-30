@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -50,13 +51,13 @@ class Subfaculty
     private $idboss;
 
     /**
-     * @ORM\ManyToOne(targetEntity="faculty",inversedBy="subfaculties")
+     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="subfaculties")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $faculty;
 
     /**
-     * @ORM\OneToMany(targetEntity="teacher", mappedBy="subfaculty")
+     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="subfaculty")
      */
     private $teachers;
 
@@ -70,7 +71,7 @@ class Subfaculty
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="group", mappedBy="subfaculty")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="subfaculty")
      */
     private $groups;
 

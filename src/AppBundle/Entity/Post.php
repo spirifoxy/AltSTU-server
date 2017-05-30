@@ -38,7 +38,7 @@ class Post
 
 
     /**
-     * @ORM\OneToMany(targetEntity="teacher", mappedBy="post")
+     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="post")
      */
     private $teachers;
 
