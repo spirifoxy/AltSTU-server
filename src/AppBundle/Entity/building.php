@@ -2,30 +2,24 @@
 
 namespace AppBundle\Entity;
 
-use JMS\Serializer\Annotation\Expose;
-use JMS\Serializer\Annotation\Exclude;
-use JMS\Serializer\Annotation\VirtualProperty;
-use JMS\Serializer\Annotation\ExclusionPolicy;
-
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * building
  *
- * @ORM\Table(name="user")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
- * @ExclusionPolicy("all")
+ * @ORM\Table(name="building")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\buildingRepository")
  */
-class User extends BaseUser
+class building
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Exclude
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string
@@ -33,6 +27,19 @@ class User extends BaseUser
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity="room", mappedBy="building")
+     */
+    private $rooms;
+
+    public function __construct() {
+        $this->rooms = new ArrayCollection();
+    }
+
+    public function getRoomtypes() {
+        return $this->rooms;
+    }
 
     /**
      * Get id
@@ -49,7 +56,7 @@ class User extends BaseUser
      *
      * @param string $name
      *
-     * @return User
+     * @return building
      */
     public function setName($name)
     {
