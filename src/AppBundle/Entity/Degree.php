@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * degree
  *
  * @ORM\Table(name="degree")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\degreeRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\DegreeRepository")
  */
-class degree
+class Degree
 {
     /**
      * @var int
@@ -63,7 +64,7 @@ class degree
      *
      * @param string $shortdegree
      *
-     * @return degree
+     * @return Degree
      */
     public function setShortdegree($shortdegree)
     {
@@ -87,7 +88,7 @@ class degree
      *
      * @param string $longdegree
      *
-     * @return degree
+     * @return Degree
      */
     public function setLongdegree($longdegree)
     {

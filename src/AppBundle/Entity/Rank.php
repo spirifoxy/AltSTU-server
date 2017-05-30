@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * rank
  *
  * @ORM\Table(name="rank")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\rankRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\RankRepository")
  */
-class rank
+class Rank
 {
     /**
      * @var int
@@ -57,7 +57,7 @@ class rank
      *
      * @param string $rankname
      *
-     * @return rank
+     * @return Rank
      */
     public function setRankname($rankname)
     {

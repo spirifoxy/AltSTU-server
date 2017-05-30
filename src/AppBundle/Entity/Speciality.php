@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * speciality
  *
  * @ORM\Table(name="speciality")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\specialityRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SpecialityRepository")
  */
-class speciality
+class Speciality
 {
     /**
      * @var int
@@ -63,7 +63,7 @@ class speciality
      *
      * @param string $shortspeciality
      *
-     * @return speciality
+     * @return Speciality
      */
     public function setShortspeciality($shortspeciality)
     {
@@ -87,7 +87,7 @@ class speciality
      *
      * @param string $longspeciality
      *
-     * @return speciality
+     * @return Speciality
      */
     public function setLongspeciality($longspeciality)
     {

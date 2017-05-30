@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * group
  *
  * @ORM\Table(name="group")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\groupsRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\GroupsRepository")
  */
-class group
+class Group
 {
     /**
      * @var int
@@ -95,7 +95,7 @@ class group
      *
      * @param string $name1
      *
-     * @return group
+     * @return Group
      */
     public function setName1($name1)
     {
@@ -119,7 +119,7 @@ class group
      *
      * @param string $name2
      *
-     * @return group
+     * @return Group
      */
     public function setName2($name2)
     {
@@ -143,7 +143,7 @@ class group
      *
      * @param integer $peoplecount
      *
-     * @return group
+     * @return Group
      */
     public function setPeoplecount($peoplecount)
     {
@@ -167,7 +167,7 @@ class group
      *
      * @param integer $iddaynight
      *
-     * @return group
+     * @return Group
      */
     public function setIddaynight($iddaynight)
     {

@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * timetable
  *
  * @ORM\Table(name="timetable")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\timetableRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TimetableRepository")
  */
-class timetable
+class Timetable
 {
     /**
      * @var int
@@ -41,7 +41,7 @@ class timetable
     private $teacher;
 
     /**
-     * @ORM\ManyToOne(targetEntity="typelect",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="typelesson",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $typelect;
@@ -75,7 +75,7 @@ class timetable
      *
      * @param \DateTime $begindatetime
      *
-     * @return timetable
+     * @return Timetable
      */
     public function setBegindatetime($begindatetime)
     {

@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * educform
  *
  * @ORM\Table(name="educform")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\educformRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EducformRepository")
  */
-class educform
+class Educform
 {
     /**
      * @var int
@@ -56,7 +57,7 @@ class educform
      *
      * @param string $formname
      *
-     * @return educform
+     * @return Educform
      */
     public function setFormname($formname)
     {

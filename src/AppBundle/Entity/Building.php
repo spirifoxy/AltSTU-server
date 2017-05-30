@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * roomtype
+ * building
  *
- * @ORM\Table(name="roomtype")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\roomtypeRepository")
+ * @ORM\Table(name="building")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BuildingRepository")
  */
-class roomtype
+class Building
 {
     /**
      * @var int
@@ -24,12 +25,12 @@ class roomtype
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
-    private $type;
+    private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="room", mappedBy="roomtype")
+     * @ORM\OneToMany(targetEntity="room", mappedBy="building")
      */
     private $rooms;
 
@@ -37,7 +38,7 @@ class roomtype
         $this->rooms = new ArrayCollection();
     }
 
-    public function getRoomtypes() {
+    public function getRooms() {
         return $this->rooms;
     }
 
@@ -52,27 +53,27 @@ class roomtype
     }
 
     /**
-     * Set type
+     * Set name
      *
-     * @param string $type
+     * @param string $name
      *
-     * @return roomtype
+     * @return Building
      */
-    public function setType($type)
+    public function setName($name)
     {
-        $this->type = $type;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get type
+     * Get name
      *
      * @return string
      */
-    public function getType()
+    public function getName()
     {
-        return $this->type;
+        return $this->name;
     }
 }
 

@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * faculty
  *
  * @ORM\Table(name="faculty")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\facultyRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\FacultyRepository")
  */
-class faculty
+class Faculty
 {
     /**
      * @var int
@@ -73,7 +74,7 @@ class faculty
      *
      * @param string $fullname
      *
-     * @return faculty
+     * @return Faculty
      */
     public function setFullname($fullname)
     {
@@ -97,7 +98,7 @@ class faculty
      *
      * @param string $shortname
      *
-     * @return faculty
+     * @return Faculty
      */
     public function setShortname($shortname)
     {

@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * semester
  *
  * @ORM\Table(name="semester")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\semesterRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SemesterRepository")
  */
-class semester
+class Semester
 {
     /**
      * @var int
@@ -164,7 +164,7 @@ class semester
      *
      * @param string $name
      *
-     * @return semester
+     * @return Semester
      */
     public function setName($name)
     {
@@ -188,7 +188,7 @@ class semester
      *
      * @param \DateTime $begindate
      *
-     * @return semester
+     * @return Semester
      */
     public function setBegindate($begindate)
     {
@@ -212,7 +212,7 @@ class semester
      *
      * @param \DateTime $enddate
      *
-     * @return semester
+     * @return Semester
      */
     public function setEnddate($enddate)
     {
@@ -236,7 +236,7 @@ class semester
      *
      * @param \DateTime $beginbreak
      *
-     * @return semester
+     * @return Semester
      */
     public function setBeginbreak($beginbreak)
     {
@@ -260,7 +260,7 @@ class semester
      *
      * @param \DateTime $endbreak
      *
-     * @return semester
+     * @return Semester
      */
     public function setEndbreak($endbreak)
     {
@@ -284,7 +284,7 @@ class semester
      *
      * @param \DateTime $beginsession
      *
-     * @return semester
+     * @return Semester
      */
     public function setBeginsession($beginsession)
     {
@@ -308,7 +308,7 @@ class semester
      *
      * @param \DateTime $endsession
      *
-     * @return semester
+     * @return Semester
      */
     public function setEndsession($endsession)
     {
@@ -332,7 +332,7 @@ class semester
      *
      * @param integer $lastweeknumber
      *
-     * @return semester
+     * @return Semester
      */
     public function setLastweeknumber($lastweeknumber)
     {
@@ -356,7 +356,7 @@ class semester
      *
      * @param \DateTime $beginday1
      *
-     * @return semester
+     * @return Semester
      */
     public function setBeginday1($beginday1)
     {
@@ -380,7 +380,7 @@ class semester
      *
      * @param \DateTime $endday1
      *
-     * @return semester
+     * @return Semester
      */
     public function setEndday1($endday1)
     {
@@ -404,7 +404,7 @@ class semester
      *
      * @param \DateTime $beginday2
      *
-     * @return semester
+     * @return Semester
      */
     public function setBeginday2($beginday2)
     {
@@ -428,7 +428,7 @@ class semester
      *
      * @param \DateTime $endday2
      *
-     * @return semester
+     * @return Semester
      */
     public function setEndday2($endday2)
     {
@@ -452,7 +452,7 @@ class semester
      *
      * @param \DateTime $beginday3
      *
-     * @return semester
+     * @return Semester
      */
     public function setBeginday3($beginday3)
     {
@@ -476,7 +476,7 @@ class semester
      *
      * @param \DateTime $endday3
      *
-     * @return semester
+     * @return Semester
      */
     public function setEndday3($endday3)
     {
@@ -500,7 +500,7 @@ class semester
      *
      * @param boolean $isactive
      *
-     * @return semester
+     * @return Semester
      */
     public function setIsactive($isactive)
     {

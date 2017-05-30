@@ -2,15 +2,16 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * post
  *
  * @ORM\Table(name="post")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\postRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
  */
-class post
+class Post
 {
     /**
      * @var int
@@ -64,7 +65,7 @@ class post
      *
      * @param string $longname
      *
-     * @return post
+     * @return Post
      */
     public function setLongname($longname)
     {
@@ -88,7 +89,7 @@ class post
      *
      * @param string $shortname
      *
-     * @return post
+     * @return Post
      */
     public function setShortname($shortname)
     {

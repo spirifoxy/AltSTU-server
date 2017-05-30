@@ -65,7 +65,7 @@ class Version20170530162306 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_6B1F670F068CDC9 ON timetable (typelect_id)');
         $this->addSql('CREATE INDEX IDX_6B1F6704A798B6F ON timetable (semester_id)');
         $this->addSql('CREATE INDEX IDX_6B1F670FE54D947 ON timetable (group_id)');
-        $this->addSql('CREATE TABLE typelect (id INT NOT NULL, type INT NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE typelesson (id INT NOT NULL, type INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE "user" (id INT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id))');
         $this->addSql('ALTER TABLE "group" ADD CONSTRAINT FK_6DC044C5379D4CCB FOREIGN KEY (subfaculty_id) REFERENCES subfaculty (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE "group" ADD CONSTRAINT FK_6DC044C5680CAB68 FOREIGN KEY (faculty_id) REFERENCES faculty (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
@@ -81,7 +81,7 @@ class Version20170530162306 extends AbstractMigration
         $this->addSql('ALTER TABLE teacher ADD CONSTRAINT FK_B0F6A6D5379D4CCB FOREIGN KEY (subfaculty_id) REFERENCES subfaculty (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F67054177093 FOREIGN KEY (room_id) REFERENCES toom (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F67041807E1D FOREIGN KEY (teacher_id) REFERENCES teacher (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
-        $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F670F068CDC9 FOREIGN KEY (typelect_id) REFERENCES typelect (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
+        $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F670F068CDC9 FOREIGN KEY (typelect_id) REFERENCES typelesson (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F6704A798B6F FOREIGN KEY (semester_id) REFERENCES semester (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
         $this->addSql('ALTER TABLE timetable ADD CONSTRAINT FK_6B1F670FE54D947 FOREIGN KEY (group_id) REFERENCES "group" (id) NOT DEFERRABLE INITIALLY IMMEDIATE');
     }
@@ -142,7 +142,7 @@ class Version20170530162306 extends AbstractMigration
         $this->addSql('DROP TABLE subfaculty');
         $this->addSql('DROP TABLE teacher');
         $this->addSql('DROP TABLE timetable');
-        $this->addSql('DROP TABLE typelect');
+        $this->addSql('DROP TABLE typelesson');
         $this->addSql('DROP TABLE "user"');
     }
 }

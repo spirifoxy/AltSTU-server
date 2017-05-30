@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * building
+ * roomtype
  *
- * @ORM\Table(name="building")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\buildingRepository")
+ * @ORM\Table(name="roomtype")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\RoomtypeRepository")
  */
-class building
+class Roomtype
 {
     /**
      * @var int
@@ -24,12 +24,12 @@ class building
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="type", type="string", length=255)
      */
-    private $name;
+    private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="room", mappedBy="building")
+     * @ORM\OneToMany(targetEntity="room", mappedBy="roomtype")
      */
     private $rooms;
 
@@ -52,27 +52,27 @@ class building
     }
 
     /**
-     * Set name
+     * Set type
      *
-     * @param string $name
+     * @param string $type
      *
-     * @return building
+     * @return Roomtype
      */
-    public function setName($name)
+    public function setType($type)
     {
-        $this->name = $name;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get type
      *
      * @return string
      */
-    public function getName()
+    public function getType()
     {
-        return $this->name;
+        return $this->type;
     }
 }
 

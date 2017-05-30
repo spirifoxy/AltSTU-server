@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * subfaculty
  *
  * @ORM\Table(name="subfaculty")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\subfacultyRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\SubfacultyRepository")
  */
-class subfaculty
+class Subfaculty
 {
     /**
      * @var int
@@ -93,7 +93,7 @@ class subfaculty
      *
      * @param string $shortsubfaculty
      *
-     * @return subfaculty
+     * @return Subfaculty
      */
     public function setShortsubfaculty($shortsubfaculty)
     {
@@ -117,7 +117,7 @@ class subfaculty
      *
      * @param string $longsubfaculty
      *
-     * @return subfaculty
+     * @return Subfaculty
      */
     public function setLongsubfaculty($longsubfaculty)
     {
@@ -141,7 +141,7 @@ class subfaculty
      *
      * @param boolean $isexist
      *
-     * @return subfaculty
+     * @return Subfaculty
      */
     public function setIsexist($isexist)
     {
@@ -165,7 +165,7 @@ class subfaculty
      *
      * @param integer $idboss
      *
-     * @return subfaculty
+     * @return Subfaculty
      */
     public function setIdboss($idboss)
     {

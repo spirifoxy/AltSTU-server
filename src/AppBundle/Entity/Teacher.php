@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * teacher
  *
  * @ORM\Table(name="teacher")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\teacherRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TeacherRepository")
  */
-class teacher
+class Teacher
 {
     /**
      * @var int
@@ -92,7 +92,7 @@ class teacher
      *
      * @param string $name
      *
-     * @return teacher
+     * @return Teacher
      */
     public function setName($name)
     {
@@ -116,7 +116,7 @@ class teacher
      *
      * @param string $surname
      *
-     * @return teacher
+     * @return Teacher
      */
     public function setSurname($surname)
     {
@@ -140,7 +140,7 @@ class teacher
      *
      * @param string $patronymic
      *
-     * @return teacher
+     * @return Teacher
      */
     public function setPatronymic($patronymic)
     {

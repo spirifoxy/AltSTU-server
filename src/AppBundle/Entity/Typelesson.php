@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * typelect
+ * typelesson
  *
- * @ORM\Table(name="typelect")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\typelectRepository")
+ * @ORM\Table(name="typelesson")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TypelessonRepository")
  */
-class typelect
+class Typelesson
 {
     /**
      * @var int
@@ -22,14 +22,21 @@ class typelect
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="type", type="integer")
+     * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="timetable", mappedBy="typelect")
+     * @var string
+     *
+     * @ORM\Column(name="typeshort", type="string", length=255)
+     */
+    private $typeshort;
+
+    /**
+     * @ORM\OneToMany(targetEntity="timetable", mappedBy="typelesson")
      */
     private $timetables;
 
@@ -54,9 +61,9 @@ class typelect
     /**
      * Set type
      *
-     * @param integer $type
+     * @param string $type
      *
-     * @return typelect
+     * @return Typelesson
      */
     public function setType($type)
     {
@@ -68,11 +75,35 @@ class typelect
     /**
      * Get type
      *
-     * @return int
+     * @return string
      */
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set typeshort
+     *
+     * @param string $typeshort
+     *
+     * @return Typelesson
+     */
+    public function setTypeshort($typeshort)
+    {
+        $this->typeshort = $typeshort;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getTypeshort()
+    {
+        return $this->typeshort;
     }
 }
 
