@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11a04504-ca73-4a54-95c2-7ef8f25302f2" name="Default" comment="">
+    <list default="true" id="11a04504-ca73-4a54-95c2-7ef8f25302f2" name="Default" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;src/AppBundle/Repository/TypelectRepository.php&#10;#&#9;src/AppBundle/Repository/TypelessonRepository.php&#10;#&#9;src/AppBundle/Repository/typelectRepository.php">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DoctrineMigrations/Version20170530162306.php" afterPath="$PROJECT_DIR$/app/DoctrineMigrations/Version20170530162306.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/serializer/AppBundle/Entity.Post.yml" afterPath="$PROJECT_DIR$/app/config/serializer/AppBundle/Entity.Post.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/building.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Building.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/degree.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Degree.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/educform.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Educform.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/faculty.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Faculty.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/group.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Group.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/post.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Post.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/rank.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Rank.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/room.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Room.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/roomtype.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Roomtype.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/semester.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Semester.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/speciality.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Speciality.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/subfaculty.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Subfaculty.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/teacher.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Teacher.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/timetable.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Timetable.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/typelect.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Typelesson.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/toomRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RoomRepository.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/typelectRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TypelessonRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/buildingRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/BuildingRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/degreeRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/DegreeRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/educformRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/EducformRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/facultyRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/FacultyRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/groupsRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/GroupsRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/postRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/PostRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/rankRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RankRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/roomtypeRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RoomtypeRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/semesterRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SemesterRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/specialityRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SpecialityRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/subfacultyRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/SubfacultyRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/teacherRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TeacherRepository.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/timetableRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TimetableRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -826,13 +817,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22386000" />
+    <option name="totallyTimeSpent" value="22444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1615" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24452783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24452783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1121,7 +1111,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/degreeRepository.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/DegreeRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
