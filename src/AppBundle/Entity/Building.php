@@ -75,5 +75,28 @@ class Building
     {
         return $this->name;
     }
-}
 
+    /**
+     * Add room
+     *
+     * @param \AppBundle\Entity\Room $room
+     *
+     * @return Building
+     */
+    public function addRoom(\AppBundle\Entity\Room $room)
+    {
+        $this->rooms[] = $room;
+
+        return $this;
+    }
+
+    /**
+     * Remove room
+     *
+     * @param \AppBundle\Entity\Room $room
+     */
+    public function removeRoom(\AppBundle\Entity\Room $room)
+    {
+        $this->rooms->removeElement($room);
+    }
+}

@@ -116,5 +116,52 @@ class Faculty
     {
         return $this->shortname;
     }
-}
 
+    /**
+     * Add subfaculty
+     *
+     * @param \AppBundle\Entity\Subfaculty $subfaculty
+     *
+     * @return Faculty
+     */
+    public function addSubfaculty(\AppBundle\Entity\Subfaculty $subfaculty)
+    {
+        $this->subfaculties[] = $subfaculty;
+
+        return $this;
+    }
+
+    /**
+     * Remove subfaculty
+     *
+     * @param \AppBundle\Entity\Subfaculty $subfaculty
+     */
+    public function removeSubfaculty(\AppBundle\Entity\Subfaculty $subfaculty)
+    {
+        $this->subfaculties->removeElement($subfaculty);
+    }
+
+    /**
+     * Add group
+     *
+     * @param \AppBundle\Entity\Group $group
+     *
+     * @return Faculty
+     */
+    public function addGroup(\AppBundle\Entity\Group $group)
+    {
+        $this->groups[] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Remove group
+     *
+     * @param \AppBundle\Entity\Group $group
+     */
+    public function removeGroup(\AppBundle\Entity\Group $group)
+    {
+        $this->groups->removeElement($group);
+    }
+}

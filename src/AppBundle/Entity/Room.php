@@ -37,19 +37,19 @@ class Room
     private $capacity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="roomtype",inversedBy="roomtypes")
+     * @ORM\ManyToOne(targetEntity="Roomtype",inversedBy="roomtypes")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $roomtype;
 
     /**
-     * @ORM\ManyToOne(targetEntity="building",inversedBy="buildings")
+     * @ORM\ManyToOne(targetEntity="Building",inversedBy="rooms")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $building;
 
     /**
-     * @ORM\OneToMany(targetEntity="timetable", mappedBy="room")
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="room")
      */
     private $timetables;
 
@@ -76,7 +76,7 @@ class Room
      *
      * @param string $number
      *
-     * @return room
+     * @return Room
      */
     public function setNumber($number)
     {
@@ -100,7 +100,7 @@ class Room
      *
      * @param integer $capacity
      *
-     * @return room
+     * @return Room
      */
     public function setCapacity($capacity)
     {

@@ -39,7 +39,7 @@ class Subfaculty
     /**
      * @var bool
      *
-     * @ORM\Column(name="isexist", type="boolean")
+     * @ORM\Column(name="isexist", type="boolean", nullable=true, options={"default":1})
      */
     private $isexist;
 
@@ -184,5 +184,76 @@ class Subfaculty
     {
         return $this->idboss;
     }
-}
 
+    /**
+     * Set faculty
+     *
+     * @param \AppBundle\Entity\Faculty $faculty
+     *
+     * @return Subfaculty
+     */
+    public function setFaculty(\AppBundle\Entity\Faculty $faculty = null)
+    {
+        $this->faculty = $faculty;
+
+        return $this;
+    }
+
+    /**
+     * Get faculty
+     *
+     * @return \AppBundle\Entity\Faculty
+     */
+    public function getFaculty()
+    {
+        return $this->faculty;
+    }
+
+    /**
+     * Add teacher
+     *
+     * @param \AppBundle\Entity\Teacher $teacher
+     *
+     * @return Subfaculty
+     */
+    public function addTeacher(\AppBundle\Entity\Teacher $teacher)
+    {
+        $this->teachers[] = $teacher;
+
+        return $this;
+    }
+
+    /**
+     * Remove teacher
+     *
+     * @param \AppBundle\Entity\Teacher $teacher
+     */
+    public function removeTeacher(\AppBundle\Entity\Teacher $teacher)
+    {
+        $this->teachers->removeElement($teacher);
+    }
+
+    /**
+     * Add group
+     *
+     * @param \AppBundle\Entity\Group $group
+     *
+     * @return Subfaculty
+     */
+    public function addGroup(\AppBundle\Entity\Group $group)
+    {
+        $this->groups[] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Remove group
+     *
+     * @param \AppBundle\Entity\Group $group
+     */
+    public function removeGroup(\AppBundle\Entity\Group $group)
+    {
+        $this->groups->removeElement($group);
+    }
+}

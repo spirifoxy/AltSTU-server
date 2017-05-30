@@ -44,18 +44,18 @@ class Teacher
     private $patronymic;
 
     /**
-     * @ORM\ManyToOne(targetEntity="post",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Post",inversedBy="teachers")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $post;
 
     /**
-     * @ORM\ManyToOne(targetEntity="degree",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Degree",inversedBy="teachers")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $degree;
     /**
-     * @ORM\ManyToOne(targetEntity="rank",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Rank",inversedBy="teachers")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $rank;
