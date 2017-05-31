@@ -128,7 +128,7 @@ class Semester
     private $isactive;
 
     /**
-     * @ORM\OneToMany(targetEntity="Group", mappedBy="Semester")
+     * @ORM\OneToMany(targetEntity="Group", mappedBy="semester")
      */
     private $groups;
 

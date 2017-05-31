@@ -37,7 +37,7 @@ class Room
     private $capacity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Roomtype",inversedBy="roomtypes")
+     * @ORM\ManyToOne(targetEntity="Roomtype",inversedBy="rooms")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $roomtype;

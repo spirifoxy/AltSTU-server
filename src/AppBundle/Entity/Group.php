@@ -50,7 +50,7 @@ class Group
     private $iddaynight;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="Groups")
+     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="groups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $subfaculty;
@@ -78,6 +78,11 @@ class Group
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $speciality;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="group")
+     */
+    private $timetables;
 
 
     /**
