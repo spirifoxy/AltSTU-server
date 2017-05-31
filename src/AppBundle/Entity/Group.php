@@ -190,5 +190,165 @@ class Group
     {
         return $this->iddaynight;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->timetables = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Set subfaculty
+     *
+     * @param \AppBundle\Entity\Subfaculty $subfaculty
+     *
+     * @return Group
+     */
+    public function setSubfaculty(\AppBundle\Entity\Subfaculty $subfaculty = null)
+    {
+        $this->subfaculty = $subfaculty;
+
+        return $this;
+    }
+
+    /**
+     * Get subfaculty
+     *
+     * @return \AppBundle\Entity\Subfaculty
+     */
+    public function getSubfaculty()
+    {
+        return $this->subfaculty;
+    }
+
+    /**
+     * Set faculty
+     *
+     * @param \AppBundle\Entity\Faculty $faculty
+     *
+     * @return Group
+     */
+    public function setFaculty(\AppBundle\Entity\Faculty $faculty = null)
+    {
+        $this->faculty = $faculty;
+
+        return $this;
+    }
+
+    /**
+     * Get faculty
+     *
+     * @return \AppBundle\Entity\Faculty
+     */
+    public function getFaculty()
+    {
+        return $this->faculty;
+    }
+
+    /**
+     * Set semester
+     *
+     * @param \AppBundle\Entity\Semester $semester
+     *
+     * @return Group
+     */
+    public function setSemester(\AppBundle\Entity\Semester $semester = null)
+    {
+        $this->semester = $semester;
+
+        return $this;
+    }
+
+    /**
+     * Get semester
+     *
+     * @return \AppBundle\Entity\Semester
+     */
+    public function getSemester()
+    {
+        return $this->semester;
+    }
+
+    /**
+     * Set educform
+     *
+     * @param \AppBundle\Entity\Educform $educform
+     *
+     * @return Group
+     */
+    public function setEducform(\AppBundle\Entity\Educform $educform = null)
+    {
+        $this->educform = $educform;
+
+        return $this;
+    }
+
+    /**
+     * Get educform
+     *
+     * @return \AppBundle\Entity\Educform
+     */
+    public function getEducform()
+    {
+        return $this->educform;
+    }
+
+    /**
+     * Set speciality
+     *
+     * @param \AppBundle\Entity\Speciality $speciality
+     *
+     * @return Group
+     */
+    public function setSpeciality(\AppBundle\Entity\Speciality $speciality = null)
+    {
+        $this->speciality = $speciality;
+
+        return $this;
+    }
+
+    /**
+     * Get speciality
+     *
+     * @return \AppBundle\Entity\Speciality
+     */
+    public function getSpeciality()
+    {
+        return $this->speciality;
+    }
+
+    /**
+     * Add timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     *
+     * @return Group
+     */
+    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables[] = $timetable;
+
+        return $this;
+    }
+
+    /**
+     * Remove timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     */
+    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables->removeElement($timetable);
+    }
+
+    /**
+     * Get timetables
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTimetables()
+    {
+        return $this->timetables;
+    }
+}

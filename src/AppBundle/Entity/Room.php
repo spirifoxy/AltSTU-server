@@ -118,5 +118,76 @@ class Room
     {
         return $this->capacity;
     }
-}
 
+    /**
+     * Set roomtype
+     *
+     * @param \AppBundle\Entity\Roomtype $roomtype
+     *
+     * @return Room
+     */
+    public function setRoomtype(\AppBundle\Entity\Roomtype $roomtype = null)
+    {
+        $this->roomtype = $roomtype;
+
+        return $this;
+    }
+
+    /**
+     * Get roomtype
+     *
+     * @return \AppBundle\Entity\Roomtype
+     */
+    public function getRoomtype()
+    {
+        return $this->roomtype;
+    }
+
+    /**
+     * Set building
+     *
+     * @param \AppBundle\Entity\Building $building
+     *
+     * @return Room
+     */
+    public function setBuilding(\AppBundle\Entity\Building $building = null)
+    {
+        $this->building = $building;
+
+        return $this;
+    }
+
+    /**
+     * Get building
+     *
+     * @return \AppBundle\Entity\Building
+     */
+    public function getBuilding()
+    {
+        return $this->building;
+    }
+
+    /**
+     * Add timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     *
+     * @return Room
+     */
+    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables[] = $timetable;
+
+        return $this;
+    }
+
+    /**
+     * Remove timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     */
+    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables->removeElement($timetable);
+    }
+}
