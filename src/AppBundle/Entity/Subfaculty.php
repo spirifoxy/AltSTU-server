@@ -63,7 +63,7 @@ class Subfaculty
 
     public function __construct() {
         $this->teachers = new ArrayCollection();
-        $this->groups = new ArrayCollection();
+        $this->studygroups = new ArrayCollection();
     }
 
     public function getTeachers() {
@@ -71,12 +71,13 @@ class Subfaculty
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Group", mappedBy="subfaculty")
+     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="subfaculty")
      */
-    private $groups;
+    private $studygroups;
 
-    public function getGroups() {
-        return $this->groups;
+
+    public function getStudygroups() {
+        return $this->studygroups;
     }
 
     /**
@@ -233,27 +234,29 @@ class Subfaculty
         $this->teachers->removeElement($teacher);
     }
 
+
+
     /**
-     * Add group
+     * Add studygroup
      *
-     * @param \AppBundle\Entity\Group $group
+     * @param \AppBundle\Entity\StudyGroup $studygroup
      *
      * @return Subfaculty
      */
-    public function addGroup(\AppBundle\Entity\Group $group)
+    public function addStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
     {
-        $this->groups[] = $group;
+        $this->studygroups[] = $studygroup;
 
         return $this;
     }
 
     /**
-     * Remove group
+     * Remove studygroup
      *
-     * @param \AppBundle\Entity\Group $group
+     * @param \AppBundle\Entity\StudyGroup $studygroup
      */
-    public function removeGroup(\AppBundle\Entity\Group $group)
+    public function removeStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
     {
-        $this->groups->removeElement($group);
+        $this->studygroups->removeElement($studygroup);
     }
 }

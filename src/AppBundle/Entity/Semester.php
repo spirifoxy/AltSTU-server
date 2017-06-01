@@ -79,48 +79,6 @@ class Semester
     private $lastweeknumber;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="beginday1", type="date", nullable=true)
-     */
-    private $beginday1;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endday1", type="date", nullable=true)
-     */
-    private $endday1;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="beginday2", type="date", nullable=true)
-     */
-    private $beginday2;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endday2", type="date", nullable=true)
-     */
-    private $endday2;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="beginday3", type="date", nullable=true)
-     */
-    private $beginday3;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="endday3", type="date", nullable=true)
-     */
-    private $endday3;
-
-    /**
      * @var bool
      *
      * @ORM\Column(name="isactive", type="boolean", nullable=true)
@@ -128,17 +86,17 @@ class Semester
     private $isactive;
 
     /**
-     * @ORM\OneToMany(targetEntity="Group", mappedBy="semester")
+     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="semester")
      */
-    private $groups;
+    private $studygroups;
 
-    public function __construct() {
-        $this->groups = new ArrayCollection();
-        $this->timetables = new ArrayCollection();
+    public function getStudygroups() {
+        return $this->studygroups;
     }
 
-    public function getGroups() {
-        return $this->groups;
+    public function __construct() {
+        $this->studygroups = new ArrayCollection();
+        $this->timetables = new ArrayCollection();
     }
 
     /**
@@ -352,149 +310,6 @@ class Semester
         return $this->lastweeknumber;
     }
 
-    /**
-     * Set beginday1
-     *
-     * @param \DateTime $beginday1
-     *
-     * @return Semester
-     */
-    public function setBeginday1($beginday1)
-    {
-        $this->beginday1 = $beginday1;
-
-        return $this;
-    }
-
-    /**
-     * Get beginday1
-     *
-     * @return \DateTime
-     */
-    public function getBeginday1()
-    {
-        return $this->beginday1;
-    }
-
-    /**
-     * Set endday1
-     *
-     * @param \DateTime $endday1
-     *
-     * @return Semester
-     */
-    public function setEndday1($endday1)
-    {
-        $this->endday1 = $endday1;
-
-        return $this;
-    }
-
-    /**
-     * Get endday1
-     *
-     * @return \DateTime
-     */
-    public function getEndday1()
-    {
-        return $this->endday1;
-    }
-
-    /**
-     * Set beginday2
-     *
-     * @param \DateTime $beginday2
-     *
-     * @return Semester
-     */
-    public function setBeginday2($beginday2)
-    {
-        $this->beginday2 = $beginday2;
-
-        return $this;
-    }
-
-    /**
-     * Get beginday2
-     *
-     * @return \DateTime
-     */
-    public function getBeginday2()
-    {
-        return $this->beginday2;
-    }
-
-    /**
-     * Set endday2
-     *
-     * @param \DateTime $endday2
-     *
-     * @return Semester
-     */
-    public function setEndday2($endday2)
-    {
-        $this->endday2 = $endday2;
-
-        return $this;
-    }
-
-    /**
-     * Get endday2
-     *
-     * @return \DateTime
-     */
-    public function getEndday2()
-    {
-        return $this->endday2;
-    }
-
-    /**
-     * Set beginday3
-     *
-     * @param \DateTime $beginday3
-     *
-     * @return Semester
-     */
-    public function setBeginday3($beginday3)
-    {
-        $this->beginday3 = $beginday3;
-
-        return $this;
-    }
-
-    /**
-     * Get beginday3
-     *
-     * @return \DateTime
-     */
-    public function getBeginday3()
-    {
-        return $this->beginday3;
-    }
-
-    /**
-     * Set endday3
-     *
-     * @param \DateTime $endday3
-     *
-     * @return Semester
-     */
-    public function setEndday3($endday3)
-    {
-        $this->endday3 = $endday3;
-
-        return $this;
-    }
-
-    /**
-     * Get endday3
-     *
-     * @return \DateTime
-     */
-    public function getEndday3()
-    {
-        return $this->endday3;
-    }
 
     /**
      * Set isactive
@@ -519,5 +334,52 @@ class Semester
     {
         return $this->isactive;
     }
-}
 
+    /**
+     * Add studygroup
+     *
+     * @param \AppBundle\Entity\StudyGroup $studygroup
+     *
+     * @return Semester
+     */
+    public function addStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
+    {
+        $this->studygroups[] = $studygroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove studygroup
+     *
+     * @param \AppBundle\Entity\StudyGroup $studygroup
+     */
+    public function removeStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
+    {
+        $this->studygroups->removeElement($studygroup);
+    }
+
+    /**
+     * Add timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     *
+     * @return Semester
+     */
+    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables[] = $timetable;
+
+        return $this;
+    }
+
+    /**
+     * Remove timetable
+     *
+     * @param \AppBundle\Entity\Timetable $timetable
+     */
+    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
+    {
+        $this->timetables->removeElement($timetable);
+    }
+}

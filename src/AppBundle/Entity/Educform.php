@@ -30,16 +30,16 @@ class Educform
     private $formname;
 
     /**
-     * @ORM\OneToMany(targetEntity="Group", mappedBy="educform")
+     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="educform")
      */
-    private $groups;
+    private $studygroups;
 
     public function __construct() {
-        $this->groups = new ArrayCollection();
+        $this->studygroups = new ArrayCollection();
     }
 
-    public function getGroups() {
-        return $this->groups;
+    public function getStudygroups() {
+        return $this->studygroups;
     }
 
     /**
@@ -75,5 +75,30 @@ class Educform
     {
         return $this->formname;
     }
-}
 
+
+
+    /**
+     * Add studygroup
+     *
+     * @param \AppBundle\Entity\StudyGroup $studygroup
+     *
+     * @return Educform
+     */
+    public function addStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
+    {
+        $this->studygroups[] = $studygroup;
+
+        return $this;
+    }
+
+    /**
+     * Remove studygroup
+     *
+     * @param \AppBundle\Entity\StudyGroup $studygroup
+     */
+    public function removeStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
+    {
+        $this->studygroups->removeElement($studygroup);
+    }
+}

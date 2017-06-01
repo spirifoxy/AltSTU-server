@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * group
+ * studygroup
  *
- * @ORM\Table(name="group")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\GroupsRepository")
+ * @ORM\Table(name="studygroup")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\StudyGroupsRepository")
  */
-class Group
+class StudyGroup
 {
     /**
      * @var int
@@ -50,37 +50,37 @@ class Group
     private $iddaynight;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="groups")
-     * @ORM\JoinColumn(referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="studygroups")
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
      */
     private $subfaculty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="studygroups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $faculty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="studygroups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Educform",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Educform",inversedBy="studygroups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $educform;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Speciality",inversedBy="groups")
+     * @ORM\ManyToOne(targetEntity="Speciality",inversedBy="studygroups")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $speciality;
 
     /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="group")
+     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="studygroup")
      */
     private $timetables;
 
@@ -100,7 +100,7 @@ class Group
      *
      * @param string $name1
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setName1($name1)
     {
@@ -124,7 +124,7 @@ class Group
      *
      * @param string $name2
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setName2($name2)
     {
@@ -148,7 +148,7 @@ class Group
      *
      * @param integer $peoplecount
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setPeoplecount($peoplecount)
     {
@@ -172,7 +172,7 @@ class Group
      *
      * @param integer $iddaynight
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setIddaynight($iddaynight)
     {
@@ -203,7 +203,7 @@ class Group
      *
      * @param \AppBundle\Entity\Subfaculty $subfaculty
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setSubfaculty(\AppBundle\Entity\Subfaculty $subfaculty = null)
     {
@@ -227,7 +227,7 @@ class Group
      *
      * @param \AppBundle\Entity\Faculty $faculty
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setFaculty(\AppBundle\Entity\Faculty $faculty = null)
     {
@@ -251,7 +251,7 @@ class Group
      *
      * @param \AppBundle\Entity\Semester $semester
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setSemester(\AppBundle\Entity\Semester $semester = null)
     {
@@ -275,7 +275,7 @@ class Group
      *
      * @param \AppBundle\Entity\Educform $educform
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setEducform(\AppBundle\Entity\Educform $educform = null)
     {
@@ -299,7 +299,7 @@ class Group
      *
      * @param \AppBundle\Entity\Speciality $speciality
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function setSpeciality(\AppBundle\Entity\Speciality $speciality = null)
     {
@@ -323,7 +323,7 @@ class Group
      *
      * @param \AppBundle\Entity\Timetable $timetable
      *
-     * @return Group
+     * @return StudyGroup
      */
     public function addTimetable(\AppBundle\Entity\Timetable $timetable)
     {
