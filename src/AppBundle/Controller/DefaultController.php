@@ -69,6 +69,7 @@ class DefaultController extends Controller
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($rank);
 
+        $rank = new Rank();
         $rank->setRankname('Доктор тех.наук');
         $em->persist($rank);
 
@@ -77,6 +78,7 @@ class DefaultController extends Controller
         $post->setShortname('ст.преп.');
         $em->persist($post);
 
+        $post = new Post();
         $post->setLongname('Научный работник');
         $post->setShortname('науч.раб.');
         $em->persist($post);
@@ -105,7 +107,9 @@ class DefaultController extends Controller
         $subfaculty->setShortsubfaculty('ПМ');
         $subfaculty->setFaculty($faculty);
         $em->persist($subfaculty);
+        $em->flush();
 
+        $teacher = new Teacher();
         $teacher->setName('Петр');
         $teacher->setPatronymic('Петрович');
         $teacher->setSurname('Петров');
@@ -116,39 +120,46 @@ class DefaultController extends Controller
         $em->persist($teacher);
 
         $roomtype = new Roomtype();
-
         $roomtype->setType("Лекционная");
         $em->persist($roomtype);
+
+        $roomtype = new Roomtype();
         $roomtype->setType("Стандартная");
         $em->persist($roomtype);
 
         $building = new Building();
-
         $building->setName("ГК");
         $em->persist($building);
+        $building = new Building();
         $building->setName("В");
         $em->persist($building);
+        $building = new Building();
         $building->setName("ПК");
         $em->persist($building);
+        $building = new Building();
         $building->setName("Н");
         $em->persist($building);
+        $building = new Building();
         $building->setName("Д");
         $em->persist($building);
 
         $room = new Room();
-
         $room->setRoomtype($roomtype);
         $room->setBuilding($building);
         $room->setCapacity(30);
         $room->setNumber("110");
         $em->persist($room);
 
+        $room = new Room();
         $room->setRoomtype($roomtype);
         $room->setBuilding($building);
         $room->setCapacity(100);
         $room->setNumber("120");
         $em->persist($room);
 
+        $room = new Room();
+        $roomtype = new Roomtype();
+        $building = new Building();
         $roomtype->setType("Лекционная");
         $building->setName("ПК");
         $room->setRoomtype($roomtype);
@@ -158,15 +169,16 @@ class DefaultController extends Controller
         $em->persist($room);
 
         $typeLesson = new Typelesson();
-
         $typeLesson->setType("Лекция");
         $typeLesson->setTypeshort("л.");
         $em->persist($typeLesson);
 
+        $typeLesson = new Typelesson();
         $typeLesson->setType("Практика");
         $typeLesson->setTypeshort("пр.");
         $em->persist($typeLesson);
 
+        $typeLesson = new Typelesson();
         $typeLesson->setType("Лабораторная работа");
         $typeLesson->setTypeshort("л.р.");
         $em->persist($typeLesson);
@@ -183,6 +195,7 @@ class DefaultController extends Controller
         $semester->setLastweeknumber(17);
         $em->persist($semester);
 
+        $semester = new Semester();
         $semester->setName("Second");
         $semester->setBegindate(new \DateTime("01.02.2009"));
         $semester->setEnddate(new \DateTime("24.06.2009"));
@@ -205,6 +218,8 @@ class DefaultController extends Controller
         $speciality->setShortspeciality("ПИ");
         $speciality->setLongspeciality("Програмнная инженерия");
         $em->persist($speciality);
+
+        $speciality = new Speciality();
         $speciality->setShortspeciality("ИБ");
         $speciality->setLongspeciality("Информационная безопасность");
         $em->persist($speciality);
@@ -222,6 +237,7 @@ class DefaultController extends Controller
         $group->setSpeciality($speciality);
         $em->persist($group);
 
+        $group = new Group();
         $group->setName1("IB");
         $group->setName2("21");
         $group->setIddaynight(0);
