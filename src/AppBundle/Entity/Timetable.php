@@ -53,10 +53,10 @@ class Timetable
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Group",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="StudyGroup",inversedBy="timetables")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
-    private $group;
+    private $studygroup;
 
 
 
@@ -193,13 +193,13 @@ class Timetable
     /**
      * Set group
      *
-     * @param \AppBundle\Entity\Group $group
+     * @param \AppBundle\Entity\StudyGroup $studygroup
      *
      * @return Timetable
      */
-    public function setGroup(\AppBundle\Entity\Group $group = null)
+    public function setStudygroup(\AppBundle\Entity\StudyGroup $studygroup = null)
     {
-        $this->group = $group;
+        $this->studygroup = $studygroup;
 
         return $this;
     }
@@ -207,10 +207,10 @@ class Timetable
     /**
      * Get group
      *
-     * @return \AppBundle\Entity\Group
+     * @return \AppBundle\Entity\StudyGroup
      */
-    public function getGroup()
+    public function getStudygroup()
     {
-        return $this->group;
+        return $this->studygroup;
     }
 }

@@ -6,7 +6,7 @@ use AppBundle\Entity\Building;
 use AppBundle\Entity\Degree;
 use AppBundle\Entity\Educform;
 use AppBundle\Entity\Faculty;
-use AppBundle\Entity\Group;
+use AppBundle\Entity\StudyGroup;
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Rank;
 use AppBundle\Entity\Room;
@@ -47,7 +47,7 @@ class DefaultController extends Controller
             $em->getClassMetadata('AppBundle:Degree'),
             $em->getClassMetadata('AppBundle:Educform'),
             $em->getClassMetadata('AppBundle:Faculty'),
-            $em->getClassMetadata('AppBundle:Group'),
+            $em->getClassMetadata('AppBundle:StudyGroup'),
             $em->getClassMetadata('AppBundle:Post'),
             $em->getClassMetadata('AppBundle:Rank'),
             $em->getClassMetadata('AppBundle:Room'),
@@ -225,7 +225,7 @@ class DefaultController extends Controller
         $em->persist($speciality);
 
         //добавить факультет и кафедру
-        $group = new Group();
+        $group = new StudyGroup();
         $group->setName1("PI");
         $group->setName2("31");
         $group->setIddaynight(0);
