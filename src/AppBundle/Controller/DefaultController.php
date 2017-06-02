@@ -123,50 +123,46 @@ class DefaultController extends Controller
         $roomtype->setType("Лекционная");
         $em->persist($roomtype);
 
-        $roomtype = new Roomtype();
-        $roomtype->setType("Стандартная");
-        $em->persist($roomtype);
+        $roomtype1 = new Roomtype();
+        $roomtype1->setType("Стандартная");
+        $em->persist($roomtype1);
 
-        $building = new Building();
-        $building->setName("ГК");
-        $em->persist($building);
-        $building = new Building();
-        $building->setName("В");
-        $em->persist($building);
-        $building = new Building();
-        $building->setName("ПК");
-        $em->persist($building);
-        $building = new Building();
-        $building->setName("Н");
-        $em->persist($building);
-        $building = new Building();
-        $building->setName("Д");
-        $em->persist($building);
+        $building1 = new Building();
+        $building1->setName("ГК");
+        $em->persist($building1);
+        $building2 = new Building();
+        $building2->setName("В");
+        $em->persist($building2);
+        $building3 = new Building();
+        $building3->setName("ПК");
+        $em->persist($building3);
+        $building4 = new Building();
+        $building4->setName("Н");
+        $em->persist($building4);
+        $building5 = new Building();
+        $building5->setName("Д");
+        $em->persist($building5);
 
-        $room = new Room();
-        $room->setRoomtype($roomtype);
-        $room->setBuilding($building);
-        $room->setCapacity(30);
-        $room->setNumber("110");
-        $em->persist($room);
+        $room1 = new Room();
+        $room1->setRoomtype($roomtype);
+        $room1->setBuilding($building1);
+        $room1->setCapacity(30);
+        $room1->setNumber("110");
+        $em->persist($room1);
 
-        $room = new Room();
-        $room->setRoomtype($roomtype);
-        $room->setBuilding($building);
-        $room->setCapacity(100);
-        $room->setNumber("120");
-        $em->persist($room);
+        $room2 = new Room();
+        $room2->setRoomtype($roomtype);
+        $room2->setBuilding($building2);
+        $room2->setCapacity(100);
+        $room2->setNumber("120");
+        $em->persist($room2);
 
-        $room = new Room();
-        $roomtype = new Roomtype();
-        $building = new Building();
-        $roomtype->setType("Лекционная");
-        $building->setName("ПК");
-        $room->setRoomtype($roomtype);
-        $room->setBuilding($building);
-        $room->setCapacity(100);
-        $room->setNumber("405");
-        $em->persist($room);
+        $room3 = new Room();
+        $room3->setRoomtype($roomtype1);
+        $room3->setBuilding($building3);
+        $room3->setCapacity(100);
+        $room3->setNumber("405");
+        $em->persist($room3);
 
         $typeLesson = new Typelesson();
         $typeLesson->setType("Лекция");
@@ -237,7 +233,7 @@ class DefaultController extends Controller
         $group->setSpeciality($speciality);
         $em->persist($group);
 
-        $group = new Group();
+        $group = new StudyGroup();
         $group->setName1("IB");
         $group->setName2("21");
         $group->setIddaynight(0);
