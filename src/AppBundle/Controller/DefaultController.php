@@ -15,6 +15,7 @@ use AppBundle\Entity\Semester;
 use AppBundle\Entity\Speciality;
 use AppBundle\Entity\Subfaculty;
 use AppBundle\Entity\Teacher;
+use AppBundle\Entity\Timetable;
 use AppBundle\Entity\Typelesson;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -109,15 +110,15 @@ class DefaultController extends Controller
         $em->persist($subfaculty);
         $em->flush();
 
-        $teacher = new Teacher();
-        $teacher->setName('Петр');
-        $teacher->setPatronymic('Петрович');
-        $teacher->setSurname('Петров');
-        $teacher->setRank($em->getRepository('AppBundle:Rank')->findOneBy(array('rankname' => 'Профессор')));
-        $teacher->setPost($post);
-        $teacher->setDegree($degree);
-        $teacher->setSubfaculty($subfaculty);
-        $em->persist($teacher);
+        $teacher1 = new Teacher();
+        $teacher1->setName('Петр');
+        $teacher1->setPatronymic('Петрович');
+        $teacher1->setSurname('Петров');
+        $teacher1->setRank($em->getRepository('AppBundle:Rank')->findOneBy(array('rankname' => 'Профессор')));
+        $teacher1->setPost($post);
+        $teacher1->setDegree($degree);
+        $teacher1->setSubfaculty($subfaculty);
+        $em->persist($teacher1);
 
         $roomtype = new Roomtype();
         $roomtype->setType("Лекционная");
@@ -233,17 +234,105 @@ class DefaultController extends Controller
         $group->setSpeciality($speciality);
         $em->persist($group);
 
-        $group = new StudyGroup();
-        $group->setName1("IB");
-        $group->setName2("21");
-        $group->setIddaynight(0);
-        $group->setPeoplecount(20);
-        $group->setEducform($eduform);
-        $group->setFaculty($faculty);
-        $group->setSubfaculty($subfaculty);
-        $group->setSemester($semester);
-        $group->setSpeciality($speciality);
-        $em->persist($group);
+        $group1 = new StudyGroup();
+        $group1->setName1("IB");
+        $group1->setName2("21");
+        $group1->setIddaynight(0);
+        $group1->setPeoplecount(20);
+        $group1->setEducform($eduform);
+        $group1->setFaculty($faculty);
+        $group1->setSubfaculty($subfaculty);
+        $group1->setSemester($semester);
+        $group1->setSpeciality($speciality);
+        $em->persist($group1);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($teacher1);
+        $timetable->setTypelesson($typeLesson);
+        $timetable->setBegindatetime(new \Datetime('2017-06-05 8:15'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($teacher1);
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-05 9:55'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($teacher1);
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-05 11:35'));
+        $em->persist($timetable);
+
+
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($teacher1);
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
+        $timetable->setBegindatetime(new \Datetime('2017-06-05 9:55'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
+        $timetable->setBegindatetime(new \Datetime('2017-06-06 11:35'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room3);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($typeLesson);
+        $timetable->setBegindatetime(new \Datetime('2017-06-06 13:35'));
+        $em->persist($timetable);
+
+
+
+
+        //для другой группы
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group1);
+        $timetable->setTeacher($teacher1);
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
+        $timetable->setBegindatetime(new \Datetime('2017-06-05 9:55'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group1);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
+        $timetable->setBegindatetime(new \Datetime('2017-06-06 11:35'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room3);
+        $timetable->setSemester($semester);
+        $timetable->setStudygroup($group1);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($typeLesson);
+        $timetable->setBegindatetime(new \Datetime('2017-06-06 13:35'));
+        $em->persist($timetable);
+
 
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();

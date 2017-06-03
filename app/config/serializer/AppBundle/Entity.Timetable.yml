@@ -1,0 +1,15 @@
+AppBundle\Entity\Timetable:
+    exclusion_policy: NONE
+    properties:
+        begindatetime:
+            expose: true
+#        studygroup:
+#            expose: true
+#        room:
+#            expose: true
+#        teacher:
+#            expose: true
+#        typelesson:
+#            expose: true
+#        semester:
+#            expose: true

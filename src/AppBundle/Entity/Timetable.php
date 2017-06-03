@@ -24,7 +24,7 @@ class Timetable
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="begindatetime", type="date")
+     * @ORM\Column(name="begindatetime", type="datetime")
      */
     private $begindatetime;
 

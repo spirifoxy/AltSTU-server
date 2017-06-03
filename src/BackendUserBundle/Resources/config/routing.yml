@@ -7,3 +7,8 @@ backend_user_posts:
   type: rest
   resource: "@BackendUserBundle/Controller/PostController.php"
   prefix: /v1
+
+backend_user_timetables:
+  type: rest
+  resource: "@BackendUserBundle/Controller/TimetableController.php"
+  prefix: /v1
