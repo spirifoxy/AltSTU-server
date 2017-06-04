@@ -36,20 +36,6 @@ class Post
      */
     private $shortname;
 
-
-    /**
-     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="post")
-     */
-    private $teachers;
-
-    public function __construct() {
-        $this->teachers = new ArrayCollection();
-    }
-
-    public function getTeachers() {
-        return $this->teachers;
-    }
-
     /**
      * Get id
      *

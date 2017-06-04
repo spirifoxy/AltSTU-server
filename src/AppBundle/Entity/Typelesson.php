@@ -37,19 +37,6 @@ class Typelesson
     private $typeshort;
 
     /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="typelesson")
-     */
-    private $timetables;
-
-    public function __construct() {
-        $this->timetables = new ArrayCollection();
-    }
-
-    public function getTimetables() {
-        return $this->timetables;
-    }
-
-    /**
      * Get id
      *
      * @return int

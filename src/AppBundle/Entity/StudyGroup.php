@@ -50,25 +50,19 @@ class StudyGroup
     private $iddaynight;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="studygroups")
+     * @ORM\ManyToOne(targetEntity="Subfaculty")
      * @ORM\JoinColumn(referencedColumnName="id", nullable=true)
      */
     private $subfaculty;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="studygroups")
-     * @ORM\JoinColumn(referencedColumnName="id")
-     */
-    private $faculty;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="studygroups")
+     * @ORM\ManyToOne(targetEntity="Semester")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Educform",inversedBy="studygroups")
+     * @ORM\ManyToOne(targetEntity="Educform")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $educform;
@@ -78,12 +72,6 @@ class StudyGroup
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $speciality;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="studygroup")
-     */
-    private $timetables;
-
 
     /**
      * Get id
@@ -195,7 +183,6 @@ class StudyGroup
      */
     public function __construct()
     {
-        $this->timetables = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -318,37 +305,4 @@ class StudyGroup
         return $this->speciality;
     }
 
-    /**
-     * Add timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     *
-     * @return StudyGroup
-     */
-    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables[] = $timetable;
-
-        return $this;
-    }
-
-    /**
-     * Remove timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     */
-    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables->removeElement($timetable);
-    }
-
-    /**
-     * Get timetables
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getTimetables()
-    {
-        return $this->timetables;
-    }
 }

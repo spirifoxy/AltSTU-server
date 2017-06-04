@@ -1,15 +1,15 @@
 AppBundle\Entity\Timetable:
-    exclusion_policy: NONE
+    exclusion_policy: all
     properties:
         begindatetime:
             expose: true
-#        studygroup:
-#            expose: true
-#        room:
-#            expose: true
-#        teacher:
-#            expose: true
-#        typelesson:
-#            expose: true
+        studygroup:
+            expose: true
+        room:
+            expose: true
+        teacher:
+            expose: true
+        typelesson:
+            expose: true
 #        semester:
-#            expose: true
+#            expose: false

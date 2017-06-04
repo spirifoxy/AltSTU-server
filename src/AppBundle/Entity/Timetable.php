@@ -29,31 +29,31 @@ class Timetable
     private $begindatetime;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Room",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Room")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $room;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Teacher",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Teacher")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $teacher;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Typelesson",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Typelesson")``
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $typelesson;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Semester",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="Semester")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $semester;
 
     /**
-     * @ORM\ManyToOne(targetEntity="StudyGroup",inversedBy="timetables")
+     * @ORM\ManyToOne(targetEntity="StudyGroup")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $studygroup;
@@ -164,30 +164,6 @@ class Timetable
     public function getTypelesson()
     {
         return $this->typelesson;
-    }
-
-    /**
-     * Set semester
-     *
-     * @param \AppBundle\Entity\Semester $semester
-     *
-     * @return Timetable
-     */
-    public function setSemester(\AppBundle\Entity\Semester $semester = null)
-    {
-        $this->semester = $semester;
-
-        return $this;
-    }
-
-    /**
-     * Get semester
-     *
-     * @return \AppBundle\Entity\Semester
-     */
-    public function getSemester()
-    {
-        return $this->semester;
     }
 
     /**

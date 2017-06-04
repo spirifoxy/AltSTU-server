@@ -44,39 +44,26 @@ class Teacher
     private $patronymic;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Post",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Post")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $post;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Degree",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Degree")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $degree;
     /**
-     * @ORM\ManyToOne(targetEntity="Rank",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Rank")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $rank;
     /**
-     * @ORM\ManyToOne(targetEntity="Subfaculty",inversedBy="teachers")
+     * @ORM\ManyToOne(targetEntity="Subfaculty")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $subfaculty;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="teacher")
-     */
-    private $timetables;
-
-    public function __construct() {
-        $this->timetables = new ArrayCollection();
-    }
-
-    public function getTimetables() {
-        return $this->timetables;
-    }
 
     /**
      * Get id
@@ -256,27 +243,4 @@ class Teacher
         return $this->subfaculty;
     }
 
-    /**
-     * Add timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     *
-     * @return Teacher
-     */
-    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables[] = $timetable;
-
-        return $this;
-    }
-
-    /**
-     * Remove timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     */
-    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables->removeElement($timetable);
-    }
 }

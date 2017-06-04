@@ -37,29 +37,16 @@ class Room
     private $capacity;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Roomtype",inversedBy="rooms")
+     * @ORM\ManyToOne(targetEntity="Roomtype")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $roomtype;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Building",inversedBy="rooms")
+     * @ORM\ManyToOne(targetEntity="Building")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $building;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="room")
-     */
-    private $timetables;
-
-    public function __construct() {
-        $this->timetables = new ArrayCollection();
-    }
-
-    public function getTimetables() {
-        return $this->timetables;
-    }
 
     /**
      * Get id
@@ -165,29 +152,5 @@ class Room
     public function getBuilding()
     {
         return $this->building;
-    }
-
-    /**
-     * Add timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     *
-     * @return Room
-     */
-    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables[] = $timetable;
-
-        return $this;
-    }
-
-    /**
-     * Remove timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     */
-    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables->removeElement($timetable);
     }
 }

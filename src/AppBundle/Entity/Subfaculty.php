@@ -51,34 +51,10 @@ class Subfaculty
     private $idboss;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Faculty",inversedBy="subfaculties")
+     * @ORM\ManyToOne(targetEntity="Faculty")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $faculty;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="subfaculty")
-     */
-    private $teachers;
-
-    public function __construct() {
-        $this->teachers = new ArrayCollection();
-        $this->studygroups = new ArrayCollection();
-    }
-
-    public function getTeachers() {
-        return $this->teachers;
-    }
-
-    /**
-     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="subfaculty")
-     */
-    private $studygroups;
-
-
-    public function getStudygroups() {
-        return $this->studygroups;
-    }
 
     /**
      * Get id
@@ -209,31 +185,6 @@ class Subfaculty
     {
         return $this->faculty;
     }
-
-    /**
-     * Add teacher
-     *
-     * @param \AppBundle\Entity\Teacher $teacher
-     *
-     * @return Subfaculty
-     */
-    public function addTeacher(\AppBundle\Entity\Teacher $teacher)
-    {
-        $this->teachers[] = $teacher;
-
-        return $this;
-    }
-
-    /**
-     * Remove teacher
-     *
-     * @param \AppBundle\Entity\Teacher $teacher
-     */
-    public function removeTeacher(\AppBundle\Entity\Teacher $teacher)
-    {
-        $this->teachers->removeElement($teacher);
-    }
-
 
 
     /**

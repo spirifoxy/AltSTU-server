@@ -37,19 +37,6 @@ class Speciality
     private $longspeciality;
 
     /**
-     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="speciality")
-     */
-    private $studygroups;
-
-    public function __construct() {
-        $this->studygroups = new ArrayCollection();
-    }
-
-    public function getStudygroups() {
-        return $this->studygroups;
-    }
-
-    /**
      * Get id
      *
      * @return int
@@ -105,29 +92,5 @@ class Speciality
     public function getLongspeciality()
     {
         return $this->longspeciality;
-    }
-
-    /**
-     * Add studygroup
-     *
-     * @param \AppBundle\Entity\StudyGroup $studygroup
-     *
-     * @return Speciality
-     */
-    public function addStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
-    {
-        $this->studygroups[] = $studygroup;
-
-        return $this;
-    }
-
-    /**
-     * Remove studygroup
-     *
-     * @param \AppBundle\Entity\StudyGroup $studygroup
-     */
-    public function removeStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
-    {
-        $this->studygroups->removeElement($studygroup);
     }
 }

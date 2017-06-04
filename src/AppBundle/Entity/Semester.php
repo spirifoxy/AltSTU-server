@@ -85,10 +85,6 @@ class Semester
      */
     private $isactive;
 
-    /**
-     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="semester")
-     */
-    private $studygroups;
 
     public function getStudygroups() {
         return $this->studygroups;
@@ -96,16 +92,6 @@ class Semester
 
     public function __construct() {
         $this->studygroups = new ArrayCollection();
-        $this->timetables = new ArrayCollection();
-    }
-
-    /**
-     * @ORM\OneToMany(targetEntity="Timetable", mappedBy="semester")
-     */
-    private $timetables;
-
-    public function getTimetables() {
-        return $this->timetables;
     }
 
     /**
@@ -359,27 +345,5 @@ class Semester
         $this->studygroups->removeElement($studygroup);
     }
 
-    /**
-     * Add timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     *
-     * @return Semester
-     */
-    public function addTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables[] = $timetable;
 
-        return $this;
-    }
-
-    /**
-     * Remove timetable
-     *
-     * @param \AppBundle\Entity\Timetable $timetable
-     */
-    public function removeTimetable(\AppBundle\Entity\Timetable $timetable)
-    {
-        $this->timetables->removeElement($timetable);
-    }
 }

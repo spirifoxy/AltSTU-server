@@ -30,19 +30,6 @@ class Educform
     private $formname;
 
     /**
-     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="educform")
-     */
-    private $studygroups;
-
-    public function __construct() {
-        $this->studygroups = new ArrayCollection();
-    }
-
-    public function getStudygroups() {
-        return $this->studygroups;
-    }
-
-    /**
      * Get id
      *
      * @return int

@@ -30,19 +30,6 @@ class Roomtype
     private $type;
 
     /**
-     * @ORM\OneToMany(targetEntity="Room", mappedBy="roomtype")
-     */
-    private $rooms;
-
-    public function __construct() {
-        $this->rooms = new ArrayCollection();
-    }
-
-    public function getRoomtypes() {
-        return $this->rooms;
-    }
-
-    /**
      * Get id
      *
      * @return int

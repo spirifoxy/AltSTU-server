@@ -37,29 +37,6 @@ class Faculty
     private $shortname;
 
     /**
-     * @ORM\OneToMany(targetEntity="Subfaculty", mappedBy="faculty")
-     */
-    private $subfaculties;
-
-    public function __construct() {
-        $this->subfaculties = new ArrayCollection();
-        $this->studygroups = new ArrayCollection();
-    }
-
-    public function getSubfaculties() {
-        return $this->subfaculties;
-    }
-
-    /**
-     * @ORM\OneToMany(targetEntity="StudyGroup", mappedBy="faculty")
-     */
-    private $studygroups;
-
-    public function getStudygroups() {
-        return $this->studygroups;
-    }
-
-    /**
      * Get id
      *
      * @return int
@@ -141,29 +118,4 @@ class Faculty
         $this->subfaculties->removeElement($subfaculty);
     }
 
-
-
-    /**
-     * Add studygroup
-     *
-     * @param \AppBundle\Entity\StudyGroup $studygroup
-     *
-     * @return Faculty
-     */
-    public function addStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
-    {
-        $this->studygroups[] = $studygroup;
-
-        return $this;
-    }
-
-    /**
-     * Remove studygroup
-     *
-     * @param \AppBundle\Entity\StudyGroup $studygroup
-     */
-    public function removeStudygroup(\AppBundle\Entity\StudyGroup $studygroup)
-    {
-        $this->studygroups->removeElement($studygroup);
-    }
 }

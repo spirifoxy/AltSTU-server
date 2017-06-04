@@ -30,20 +30,6 @@ class Rank
     private $rankname;
 
     /**
-     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="rank")
-     */
-    private $teachers;
-
-    public function __construct() {
-        $this->teachers = new ArrayCollection();
-    }
-
-    public function getTeachers() {
-        return $this->teachers;
-    }
-
-
-    /**
      * Get id
      *
      * @return int

@@ -36,18 +36,6 @@ class Degree
      */
     private $longdegree;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Teacher", mappedBy="degree")
-     */
-    private $teachers;
-
-    public function __construct() {
-        $this->teachers = new ArrayCollection();
-    }
-
-    public function getTeachers() {
-        return $this->teachers;
-    }
 
     /**
      * Get id
