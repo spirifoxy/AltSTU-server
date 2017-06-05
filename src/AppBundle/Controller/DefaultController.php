@@ -246,9 +246,10 @@ class DefaultController extends Controller
         $group1->setSpeciality($speciality);
         $em->persist($group1);
 
+
+
         $timetable = new Timetable();
         $timetable->setRoom($room1);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group);
         $timetable->setTeacher($teacher1);
         $timetable->setTypelesson($typeLesson);
@@ -257,7 +258,6 @@ class DefaultController extends Controller
 
         $timetable = new Timetable();
         $timetable->setRoom($room1);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group);
         $timetable->setTeacher($teacher1);
         $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
@@ -266,7 +266,6 @@ class DefaultController extends Controller
 
         $timetable = new Timetable();
         $timetable->setRoom($room1);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group);
         $timetable->setTeacher($teacher1);
         $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
@@ -275,18 +274,9 @@ class DefaultController extends Controller
 
 
 
-        $timetable = new Timetable();
-        $timetable->setRoom($room1);
-        $timetable->setSemester($semester);
-        $timetable->setStudygroup($group);
-        $timetable->setTeacher($teacher1);
-        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
-        $timetable->setBegindatetime(new \Datetime('2017-06-05 9:55'));
-        $em->persist($timetable);
 
         $timetable = new Timetable();
         $timetable->setRoom($room2);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group);
         $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
         $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
@@ -295,7 +285,6 @@ class DefaultController extends Controller
 
         $timetable = new Timetable();
         $timetable->setRoom($room3);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group);
         $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
         $timetable->setTypelesson($typeLesson);
@@ -305,10 +294,93 @@ class DefaultController extends Controller
 
 
 
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($typeLesson);
+        $timetable->setBegindatetime(new \Datetime('2017-06-08 8:15'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-08 9:55'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room3);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-08 11:35'));
+        $em->persist($timetable);
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room1);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-08 13:05'));
+        $em->persist($timetable);
+
+
+
+
+        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-09 9:55'));
+        $em->persist($timetable);
+
+
+
+/*        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-10 9:55'));
+        $em->persist($timetable);*/
+
+        /*
+        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-11 9:55'));
+        $em->persist($timetable);*/
+
+
+
+/*        $timetable = new Timetable();
+        $timetable->setRoom($room2);
+        $timetable->setStudygroup($group);
+        $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
+        $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(1));
+        $timetable->setBegindatetime(new \Datetime('2017-06-12 9:55'));
+        $em->persist($timetable);
+
+
+*/
+
+
+
+
+
+
+
+
+
         //для другой группы
         $timetable = new Timetable();
         $timetable->setRoom($room1);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group1);
         $timetable->setTeacher($teacher1);
         $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
@@ -317,7 +389,6 @@ class DefaultController extends Controller
 
         $timetable = new Timetable();
         $timetable->setRoom($room2);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group1);
         $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
         $timetable->setTypelesson($em->getRepository('AppBundle:Typelesson')->find(2));
@@ -326,7 +397,6 @@ class DefaultController extends Controller
 
         $timetable = new Timetable();
         $timetable->setRoom($room3);
-        $timetable->setSemester($semester);
         $timetable->setStudygroup($group1);
         $timetable->setTeacher($em->getRepository('AppBundle:Teacher')->findOneBy(array('surname' => 'Иванов')));
         $timetable->setTypelesson($typeLesson);
