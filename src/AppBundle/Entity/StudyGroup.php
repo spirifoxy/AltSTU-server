@@ -68,7 +68,7 @@ class StudyGroup
     private $educform;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Speciality",inversedBy="studygroups")
+     * @ORM\ManyToOne(targetEntity="Speciality")
      * @ORM\JoinColumn(referencedColumnName="id")
      */
     private $speciality;
